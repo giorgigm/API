@@ -1,24 +1,10 @@
-
-
 const http = require('http');
 const axios = require('axios');
 const xml2js = require('xml2js');
 const nodemailer = require('nodemailer');
-const os = require('os');
-
-const interfaces = os.networkInterfaces();
-let ipAddress = '';
-
-Object.keys(interfaces).forEach((interfaceName) => {
-  interfaces[interfaceName].forEach((interface) => {
-    if (interface.family === 'IPv4' && !interface.internal) {
-      ipAddress = interface.address;
-    }
-  });
-});
-
-const hostname = ipAddress;
+const hostname = '15.228.52.208';
 const port = 3000;
+
 
 
 const server = http.createServer((req, res) => {
